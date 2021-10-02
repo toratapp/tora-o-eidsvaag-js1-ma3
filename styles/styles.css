@@ -32,3 +32,11 @@ h1 {
   flex-wrap: wrap;
   margin: 50px;
 }
+
+.description {
+  border: 1px solid green;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  height: auto;
+}

@@ -22,14 +22,11 @@ async function getGames() {
         console.log(`Rating: ${descriptions[i].rating}`);
         console.log(`Amount of tags: ${descriptions[i].tags.length}`);
 
-        if(i === 7) {
+        if(i === 8) {
             break;
         }
 
-        descriptionsContainer.innerHTML += `
-        <div class="description">Name: ${descriptions[i].name}</div>
-        <div class="description">Rating: ${descriptions[i].rating}</div>
-        <div class="description">Amount of tags: ${descriptions[i].length}</div>`;
+        descriptionsContainer.innerHTML += `<div class="description">Name: <p>${descriptions[i].name}</p> <p>${descriptions[i].rating}</p> <p>${descriptions[i].length}</p></div>`;
     }
 
 }
