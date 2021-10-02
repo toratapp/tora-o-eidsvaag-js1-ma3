@@ -14,7 +14,7 @@ async function getGames() {
 
     // console.log(descriptions);
 
-    // descriptionsContainer.innerHTML = "";
+    descriptionsContainer.innerHTML = "";
 
     for(let i = 0; i < descriptions.length; i++) {
 
@@ -26,7 +26,10 @@ async function getGames() {
             break;
         }
 
-        // descriptionsContainer.innerHTML += "";
+        descriptionsContainer.innerHTML += `
+        <div class="description">Name: ${descriptions[i].name}</div>
+        <div class="description">Rating: ${descriptions[i].rating}</div>
+        <div class="description">Amount of tags: ${descriptions[i].length}</div>`;
     }
 
 }

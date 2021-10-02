@@ -1,18 +1,34 @@
+body {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  margin: 50px;
+}
+
 .loader {
   content: "";
   width: 50px;
   height: 50px;
   border: 10px solid transparent;
-  border-top-color: lightgreen;
+  border-top-color: green;
   border-radius: 50%;
   animation: spinning 1s linear infinite;
 }
 
 @keyframes spinning {
-  0% {
-    transform: rotate(0deg);
+  to {
+    transform: rotate(1turn);
   }
-  100% {
-    transform: rotate(360deg);
-  }
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.descriptions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
 }
