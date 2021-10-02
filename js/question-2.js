@@ -6,29 +6,31 @@ const descriptionsContainer = document.querySelector(".descriptions");
 
 async function getGames() {
 
-    const response = await fetch(url);
+    try {
+        const response = await fetch(url);
 
-    const results = await response.json();
-
-    const descriptions = results.results;
-
-    // console.log(descriptions);
-
-    descriptionsContainer.innerHTML = "";
-
-    for(let i = 0; i < descriptions.length; i++) {
-
-        console.log(`Name: ${descriptions[i].name}`);
-        console.log(`Rating: ${descriptions[i].rating}`);
-        console.log(`Amount of tags: ${descriptions[i].tags.length}`);
-
-        if(i === 8) {
-            break;
+        const results = await response.json();
+    
+        const descriptions = results.results;
+    
+        descriptionsContainer.innerHTML = "";
+    
+        for(let i = 0; i < descriptions.length; i++) {
+    
+            console.log(`Name: ${descriptions[i].name}`);
+            console.log(`Rating: ${descriptions[i].rating}`);
+            console.log(`Amount of tags: ${descriptions[i].tags.length}`);
+    
+            if(i === 8) {
+                break;
+            }
+    
+            descriptionsContainer.innerHTML += `<div class="description"><p>Name: ${descriptions[i].name}</p> <p>Rating: ${descriptions[i].rating}</p> <p> Amount of tags: ${descriptions[i].length}</p></div>`;
         }
-
-        descriptionsContainer.innerHTML += `<div class="description">Name: <p>${descriptions[i].name}</p> <p>${descriptions[i].rating}</p> <p>${descriptions[i].length}</p></div>`;
     }
-
+    catch(error) {
+        descriptionsContainer.innerHTML = errorMessage("Unable to get descriptions from API call.");
+    }
 }
 
 getGames();
