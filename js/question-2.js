@@ -17,15 +17,16 @@ async function getGames() {
     
         for(let i = 0; i < descriptions.length; i++) {
     
-            console.log(`Name: ${descriptions[i].name}`);
-            console.log(`Rating: ${descriptions[i].rating}`);
-            console.log(`Amount of tags: ${descriptions[i].tags.length}`);
-    
             if(i === 8) {
                 break;
             }
-    
-            descriptionsContainer.innerHTML += `<div class="description"><p>Name: ${descriptions[i].name}</p> <p>Rating: ${descriptions[i].rating}</p> <p> Amount of tags: ${descriptions[i].length}</p></div>`;
+            
+            let name = descriptions[i].name;
+            let rating = descriptions[i].rating;
+            let amountOfTags = descriptions[i].tags.length;
+            let convertedAmountOfTags = amountOfTags.toString();
+
+            descriptionsContainer.innerHTML += `<div class="description"><p>Name: ${name}</p> <p>Rating: ${rating}</p> <p> Amount of tags: ${convertedAmountOfTags}</p></div>`;
         }
     }
     catch(error) {
